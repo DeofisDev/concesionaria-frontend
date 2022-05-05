@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Navbar = () => {
     return (
         <Flex
-        as="header"
+        as="nav"
         w="100%"
         h={["4rem", "4rem", "6rem", "6rem"]}
         backgroundColor="#343434"
@@ -27,7 +27,7 @@ const Navbar = () => {
                 justify="space-between"
                 w="60%"
                 color="white"
-                fontSize="2xl"
+                fontSize="xl"
                 fontWeight={700}
                 >
                     <Link href="#">
