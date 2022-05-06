@@ -21,7 +21,9 @@ const FilterCars = () => {
         <Flex 
         width="100%" 
         wrap="wrap"
+        justify="center"
         gap="3rem"
+        mt="2rem"
         >
             {cars.map((car, index) => 
                 <CarCard key={index} car={car}/>

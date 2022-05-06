@@ -1,13 +1,12 @@
 import { Button, Image, Text, Flex } from "@chakra-ui/react"
 
 const CarCard = ({car}) => {
-    console.log(car)
     return(
         <Flex
         direction="column"
         align="center"
         gap="1rem"
-        width="30%"
+        width={["90%", "90%", "25%", "25%"]}
         border="1px solid black"
         borderRadius="0 0 20px 20px"
         borderTop="none"
