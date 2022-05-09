@@ -20,7 +20,7 @@ import {
 import FilterCars from "./FilterCars"
 import { useRef } from "react"
 
-const Cars = () => {
+const Cars = ({cars}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
 
@@ -369,7 +369,7 @@ const Cars = () => {
                             </Drawer>
                         </Flex>
                     </Flex>
-                <FilterCars/>
+                <FilterCars cars={cars}/>
             </Flex>
         </Center>
         </>
