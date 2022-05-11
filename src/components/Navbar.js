@@ -1,5 +1,5 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { Drawer, DrawerCloseButton, DrawerContent, Flex, IconButton, Image, useDisclosure, DrawerHeader, DrawerBody } from '@chakra-ui/react'
+import { Drawer, DrawerCloseButton, DrawerContent, Image, Flex, IconButton, useDisclosure, DrawerHeader, DrawerBody } from '@chakra-ui/react'
 import Link from 'next/link';
 import { useRef } from 'react';
 
@@ -23,9 +23,9 @@ const Navbar = () => {
             w="100%"
             >
                 <Image
-                src="Concesionaria.png"
+                src="/Concesionaria.png"
                 alt="e/concesionaria"
-                w={["100px", "100px", "300px", "300px"]}
+                w={["200px", "200px", "300px", "300px"]}
                 />
                 <IconButton 
                 ref={btnRef}

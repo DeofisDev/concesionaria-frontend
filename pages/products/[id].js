@@ -1,7 +1,25 @@
 import { Flex, Text, Image } from "@chakra-ui/react"
 import Navbar from "../../src/components/Navbar"
 
-const CarModel = ({car}) => {
+const car = {
+    Car: {
+        mark: {
+            name: "Toyota",
+            model: {
+                name: "Corolla",
+            },
+        },
+        specs: {
+            tankCapacity: "1.6",
+            typeOfMotor: "V8",
+            typeOfTransmision: "Automatic",
+            tankCapacity: "500lts",
+        }
+    }
+}
+
+
+const CarModel = () => {
     console.log(car)
     return (
         <>
@@ -18,7 +36,8 @@ const CarModel = ({car}) => {
             width="90%" 
             gap="0.5rem"
             fontWeight="600"
-            fontSize="3xl"
+            fontSize="4xl"
+            justify={["center", "center", "start", "start"]}
             >
                 <Text as="h1">
                     {car.Car.mark.name}
@@ -29,13 +48,14 @@ const CarModel = ({car}) => {
             </Flex>
             <Flex
             w="90%"
+            direction={["column", "column", "row", "row"]}
             >
                 <Image 
-                width="70%"
+                minWidth="60%"
                 src="https://cdn.asofix.com/companies/13d2ec10-5ef5-11ea-8eed-536328ae2266/products/th-1625243997491.1.jpg"/>
                 <Flex 
                 justify="center"
-                width="40%"
+                width={["100%", "100%", "40%", "40%"]}
                 direction="column">
                     <Text as="h2" fontSize="2xl" fontWeight="800">
                         Descripción 
@@ -47,7 +67,7 @@ const CarModel = ({car}) => {
                 </Flex>
             </Flex>
             <Flex direction="column" align="start" w="90%">
-                <Text as="h1" fontSize="2xl">
+                <Text as="h1" fontSize="2xl" fontWeight="600">
                     Ficha Técnica
                 </Text>
                 <Flex direction="column">
@@ -121,7 +141,7 @@ const CarModel = ({car}) => {
 
 export default CarModel
 
-export const getStaticPaths = async () => {
+/* export const getStaticPaths = async () => {
     const res = await fetch('http://192.168.100.69:9090/api/cars')
     const cars = await res.json()
 
@@ -145,3 +165,4 @@ export const getStaticProps = async ({params}) => {
         }
     }
 }
+*/
