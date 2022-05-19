@@ -18,6 +18,7 @@ const CarCard = ({car}) => {
         borderRadius="0 0 20px 20px"
         borderTop="none"
         py="2rem"
+        maxHeight="20rem"
         >   
             <Text
             as="h1"

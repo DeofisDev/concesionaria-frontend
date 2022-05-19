@@ -15,17 +15,36 @@ import {
     useDisclosure,
     DrawerContent,
     DrawerHeader,
-    DrawerCloseButton
+    DrawerCloseButton,
 } from "@chakra-ui/react"
 import FilterCars from "./FilterCars"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import Filters from "./Filters"
+import { getCars } from '../helpers/Apihelper'
 
 const Cars = ({cars}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
-
+    const [filters, setFilters] = useState({
+        marks: "",
+        models: "",
+        versions: "",
+        transmission: "",
+        fuel: "",
+        segments: ""
+    })
+    console.log(filters)
     const btnRef = useRef()
     const btnRef2 = useRef()
+    
+    /*
+    useEffect(() => {
+        const cars = async () => { 
+            getCars(filters)
+        }
+        cars()
+    }, [filters])
+    */
 
     return(
         <>
@@ -96,120 +115,7 @@ const Cars = ({cars}) => {
             paddingLeft="2rem"
             gap="5rem"
             >
-                <Flex
-                direction="column"
-                width="10%"
-                display= {["none", "none", "flex", "flex"]}
-                gap="1rem"
-                mt="2rem"
-                ml="2rem"
-                >
-                    <Select 
-                    placeholder="Marcas"
-                    fontSize="0.8rem"
-                    border="none"
-                    >
-                        <option>
-                            Volkswagen
-                        </option>
-                    </Select>
-                    <Select 
-                    placeholder="Modelos"
-                    fontSize="0.8rem"
-                    border="none"
-                    >
-                        <option>
-                            Volkswagen
-                        </option>
-                    </Select>
-                    <Select 
-                    placeholder="Versiones"
-                    fontSize="0.8rem"
-                    border="none"
-                    >
-                        <option>
-                            Volkswagen
-                        </option>
-                    </Select>
-                    <Select 
-                    placeholder="Transmisión"
-                    fontSize="0.8rem"
-                    border="none"
-                    >
-                        <option>
-                            Volkswagen
-                        </option>
-                    </Select>
-                    <Select 
-                    placeholder="Combustibles"
-                    fontSize="0.8rem"
-                    border="none"
-                    >
-                        <option>
-                            Volkswagen
-                        </option>
-                    </Select>
-                    <Select 
-                    placeholder="Segmentos"
-                    fontSize="0.8rem"
-                    border="none"
-                    >
-                        <option>
-                            Volkswagen
-                        </option>
-                    </Select>
-                    <Text as="h1" fontWeight="800">
-                        Kilometraje
-                    </Text>
-                    <Flex
-                    gap="1rem"
-                    >
-                        <Input
-                        placeholder="Min."
-                        fontSize="0.8rem"
-                        height="2rem"
-                        />
-                        <Input
-                        placeholder="Max."
-                        fontSize="0.8rem"
-                        height="2rem"
-                        />
-                    </Flex>
-                    <Text as="h1" fontWeight="800">
-                        Precio
-                    </Text>
-                    <Flex
-                    gap="1rem"
-                    >
-                        <Input
-                        placeholder="Min."
-                        fontSize="0.8rem"
-                        height="2rem"
-                        />
-                        <Input
-                        placeholder="Max."
-                        fontSize="0.8rem"
-                        height="2rem"
-                        />
-                    </Flex>
-                    <Text as="h1" fontWeight="800">
-                        Año
-                    </Text>
-                    <Flex
-                    gap="1rem"
-                    >
-                        <Input
-                        placeholder="Min."
-                        fontSize="0.8rem"
-                        height="2rem"
-                        />
-                        <Input
-                        placeholder="Max."
-                        fontSize="0.8rem"
-                        height="2rem"
-                        />
-                    </Flex>
-                </Flex>
+                <Filters filters={filters} setFilters={setFilters}/>
                     <Flex
                     display={["flex", "flex", "none", "none"]}
                     direction="column"

@@ -1,0 +1,147 @@
+import { useState } from 'react'
+import { Flex , Select, Text, Input} from '@chakra-ui/react'
+function Filters({filters, setFilters}) {
+    const onChange = (e) => {
+        setFilters({
+            ...filters,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    return (
+        <Flex
+            direction="column"
+            width="10%"
+            display= {["none", "none", "flex", "flex"]}
+            gap="1rem"
+            mt="2rem"
+            ml="2rem"
+            >
+                <Select 
+                placeholder="Marcas"
+                fontSize="0.8rem"
+                border="none"
+                onChange={onChange}
+                name="marks"
+                value={filters.marks}
+                >
+                    <option>
+                        Volkswagen
+                    </option>
+                </Select>
+                <Select 
+                placeholder="Modelos"
+                fontSize="0.8rem"
+                border="none"
+                onChange={onChange}
+                name="models"
+                value={filters.models}
+                >
+                    <option>
+                        Volkswagen
+                    </option>
+                </Select>
+                <Select 
+                placeholder="Versiones"
+                fontSize="0.8rem"
+                border="none"
+                onChange={onChange}
+                name="versions"
+                value={filters.versions}
+                >
+                    <option>
+                        Volkswagen
+                    </option>
+                </Select>
+                <Select 
+                placeholder="Transmisión"
+                fontSize="0.8rem"
+                border="none"
+                onChange={onChange}
+                name="transmission"
+                value={filters.transmission}
+                >
+                    <option>
+                        Volkswagen
+                    </option>
+                </Select>
+                <Select 
+                placeholder="Combustibles"
+                fontSize="0.8rem"
+                border="none"
+                onChange={onChange}
+                name="fuel"
+                value={filters.fuel}
+                >
+                    <option>
+                        Volkswagen
+                    </option>
+                </Select>
+                <Select 
+                placeholder="Segmentos"
+                fontSize="0.8rem"
+                border="none"
+                onChange={onChange}
+                name="segments"
+                value={filters.segments}
+                >
+                    <option>
+                        Volkswagen
+                    </option>
+                </Select>
+                <Text as="h1" fontWeight="800">
+                    Kilometraje
+                </Text>
+                <Flex
+                gap="1rem"
+                >
+                    <Input
+                    placeholder="Min."
+                    fontSize="0.8rem"
+                    height="2rem"
+                    />
+                    <Input
+                    placeholder="Max."
+                    fontSize="0.8rem"
+                    height="2rem"
+                    />
+                </Flex>
+                <Text as="h1" fontWeight="800">
+                    Precio
+                </Text>
+                <Flex
+                gap="1rem"
+                >
+                    <Input
+                    placeholder="Min."
+                    fontSize="0.8rem"
+                    height="2rem"
+                    />
+                    <Input
+                    placeholder="Max."
+                    fontSize="0.8rem"
+                    height="2rem"
+                    />
+                </Flex>
+                <Text as="h1" fontWeight="800">
+                    Año
+                </Text>
+                <Flex
+                gap="1rem"
+                >
+                    <Input
+                    placeholder="Min."
+                    fontSize="0.8rem"
+                    height="2rem"
+                    />
+                    <Input
+                    placeholder="Max."
+                    fontSize="0.8rem"
+                    height="2rem"
+                    />
+                </Flex>
+            </Flex>
+        )
+    }
+
+export default Filters

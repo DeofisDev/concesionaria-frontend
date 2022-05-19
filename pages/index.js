@@ -15,7 +15,7 @@ export default function Home({cars}) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://192.168.100.69:9090/api/cars')
+  const res = await fetch('http://192.168.100.69:9090/api/cars?start=1&end=2')
   const models = await res.json()
   return {
     props: {

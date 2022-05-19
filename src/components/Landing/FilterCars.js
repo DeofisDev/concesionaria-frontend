@@ -10,7 +10,7 @@ const FilterCars = ({cars}) => {
         gap="3rem"
         mt="2rem"
         >
-            {cars?.Cars.map((car, index) => 
+            {cars?.Cars?.content?.map((car, index) => 
                 <CarCard key={index} car={car}/>
             )}
         </Flex>
